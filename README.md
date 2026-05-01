@@ -75,3 +75,53 @@ else Save & Exit Selected
 
 end
 ~~~
+~~~mermaid
+classDiagram
+
+class SaveSystem {
+    +load(chest, filePath)
+    +save(chest, filePath)
+}
+
+class RecipeLoader {
+    +loadRecipes()
+}
+
+class Chest {
+    -inventory
+    +addIngredient()
+    +removeIngredient()
+    +displayInventory()
+    +hasIngredients()
+    +updateTool()
+}
+
+class Recipe {
+    -ingredients
+    -requiredTool
+    -toolTier
+    +getRequirements()
+}
+
+class CraftEngine {
+    +craft(chest, recipe)
+    +validateIngredients()
+    +validateToolTier()
+}
+
+class ToolUpgrade {
+    +upgradeTool(chest, toolName)
+}
+
+
+
+SaveSystem --> Chest : loads/saves
+RecipeLoader --> Recipe : creates/loads
+
+CraftEngine --> Chest : checks/modifies
+CraftEngine --> Recipe : reads requirements
+
+ToolUpgrade --> Chest : upgrades tool
+
+Chest --> Recipe : compares requirements
+~~~
