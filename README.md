@@ -11,9 +11,6 @@ participant Recipe
 participant CraftEngine
 participant ToolUpgrade
 
-%% =========================
-%% START PROGRAM
-%% =========================
 
 User->>MainUI: Run Program
 MainUI->>SaveSystem: load(chest, save.txt)
@@ -27,9 +24,6 @@ end
 MainUI->>RecipeLoader: load recipes
 RecipeLoader-->>MainUI: recipes ready
 
-%% =========================
-%% MAIN MENU CHOICES
-%% =========================
 
 User->>MainUI: Choose option
 
