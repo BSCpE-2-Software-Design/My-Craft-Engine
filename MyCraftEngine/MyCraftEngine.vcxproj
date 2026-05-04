@@ -131,7 +131,9 @@
     <ClCompile Include="CraftEngine.cpp" />
     <ClCompile Include="Ingredient.cpp" />
     <ClCompile Include="Item.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Recipe.cpp" />
+    <ClCompile Include="SaveSystem.cpp" />
     <ClCompile Include="Tool.cpp" />
     <ClCompile Include="ToolUpgrade.cpp" />
   </ItemGroup>
@@ -141,6 +143,7 @@
     <ClInclude Include="Ingredient.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="Recipe.h" />
+    <ClInclude Include="SaveSystem.h" />
     <ClInclude Include="Tool.h" />
     <ClInclude Include="ToolUpgrade.h" />
   </ItemGroup>

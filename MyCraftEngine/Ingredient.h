@@ -1,15 +1,13 @@
 #pragma once
-#include <vector>
-#include "Ingredient.h"
-#include "Tool.h"
-using namespace std;
+#include <string>
 
-class Recipe {
+class Ingredient {
 public:
-    string itemName;
-    vector<Ingredient> requiredIngredients;
-    string requiredTool;
-    int requiredTier;
+    std::string name = "";
+    double quantity = 0.0;
+    std::string unit = "";
 
-    Recipe(string name, vector<Ingredient> ing, string tool, int tier);
+
+    Ingredient();
+    Ingredient(std::string n, double q, std::string u);
 };

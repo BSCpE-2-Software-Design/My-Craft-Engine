@@ -1,6 +1,6 @@
 #include "Chest.h"
 
-bool Chest::hasIngredients(vector<Ingredient> req) {
+bool Chest::hasIngredients(std::vector<Ingredient> req) {
     for (auto r : req) {
         bool found = false;
         for (auto i : ingredients) {
@@ -13,7 +13,7 @@ bool Chest::hasIngredients(vector<Ingredient> req) {
     return true;
 }
 
-bool Chest::hasTool(string tool, int tier) {
+bool Chest::hasTool(std::string tool, int tier) {
     for (auto t : tools) {
         if (t.name == tool && t.tier >= tier)
             return true;
@@ -25,7 +25,7 @@ void Chest::addItem(Item item) {
     items.push_back(item);
 }
 
-void Chest::removeIngredients(vector<Ingredient> req) {
+void Chest::removeIngredients(std::vector<Ingredient> req) {
     for (auto& r : req) {
         for (auto& i : ingredients) {
             if (i.name == r.name) {

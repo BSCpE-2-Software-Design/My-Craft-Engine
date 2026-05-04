@@ -1,9 +1,9 @@
 #include <iostream>
-#include <CraftEngine.h>
+#include "CraftEngine.h"
 
 void CraftEngine::craft(Chest& chest, Recipe recipe) {
 
-	if(Chest.hasIngredients(recipe.requiredIngredients)) {
+	if(!chest.hasIngredients(recipe.requiredIngredients)) {
 		std::cout << "Insufficient Ingredients\n";
 		return;
 
