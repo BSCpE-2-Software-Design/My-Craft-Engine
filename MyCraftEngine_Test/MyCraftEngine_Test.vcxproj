@@ -138,14 +138,10 @@
     <ClCompile Include="..\MyCraftEngine\Tool.cpp" />
     <ClCompile Include="..\MyCraftEngine\ToolUpgrade.cpp" />
     <ClCompile Include="MyCraftEngine_Test.cpp" />
-    <ClCompile Include="test_chest.cpp" />
     <ClCompile Include="test_craftengine.cpp" />
     <ClCompile Include="test_data.cpp" />
     <ClCompile Include="test_ingredient.cpp" />
-    <ClCompile Include="test_item.cpp" />
-    <ClCompile Include="test_recipe.cpp" />
     <ClCompile Include="test_savesystem.cpp" />
-    <ClCompile Include="test_tool.cpp" />
     <ClCompile Include="test_toolupgrade.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

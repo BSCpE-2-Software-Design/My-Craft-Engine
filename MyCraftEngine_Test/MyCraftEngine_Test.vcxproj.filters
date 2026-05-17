@@ -42,25 +42,13 @@
     <ClCompile Include="..\MyCraftEngine\ToolUpgrade.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="test_chest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="test_craftengine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="test_data.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="test_item.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="test_recipe.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="test_savesystem.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="test_tool.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="test_toolupgrade.cpp">
