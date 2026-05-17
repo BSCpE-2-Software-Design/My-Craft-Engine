@@ -55,14 +55,10 @@ TEST_CASE("Special recipes exist") {
 
 TEST_CASE("Valid raw ingredient") {
 
-    CHECK(
-        isValidRawIngredient("Iron Ore")
-    );
+    CHECK(isValidRawIngredient("Iron Ore"));
 }
 
 TEST_CASE("Invalid raw ingredient") {
 
-    CHECK_FALSE(
-        isValidRawIngredient("Dagger")
-    );
+    CHECK_FALSE(isValidRawIngredient("Dagger"));
 }

@@ -34,7 +34,6 @@ void SaveSystem::load(Chest& chest, std::string file) {
     while (in >> type) {
 
         in.ignore();
-
         if (type == "I") {
 
             std::string n;
@@ -43,28 +42,21 @@ void SaveSystem::load(Chest& chest, std::string file) {
             std::getline(in, n);
             in >> q;
 
-            chest.ingredients.push_back(
-                Ingredient(n, q, "pcs")
-            );
+            chest.ingredients.push_back(Ingredient(n, q, "pcs"));
         }
 
         else if (type == "T") {
-
             std::string n;
             int t;
-
             std::getline(in, n);
             in >> t;
 
             chest.tools.push_back(Tool(n, t));
         }
-
         else if (type == "IT") {
 
             std::string n;
-
             std::getline(in, n);
-
             chest.items.push_back(Item(n));
         }
     }

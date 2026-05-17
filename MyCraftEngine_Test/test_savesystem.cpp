@@ -6,17 +6,11 @@ TEST_CASE("Save and load chest") {
 
     Chest chest;
 
-    chest.addIngredient(
-        Ingredient("Iron Ore", 5, "pcs")
-    );
+    chest.addIngredient(Ingredient("Iron Ore", 5, "pcs"));
 
-    chest.tools.push_back(
-        Tool("Forge Hammer", 2)
-    );
+    chest.tools.push_back(Tool("Forge Hammer", 2));
 
-    chest.items.push_back(
-        Item("Dagger")
-    );
+    chest.items.push_back(Item("Dagger"));
 
     SaveSystem::save(chest, "testsave.txt");
 

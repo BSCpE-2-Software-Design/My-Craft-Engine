@@ -16,30 +16,13 @@ TEST_CASE("Upgrade tool tier") {
 
     Chest chest;
 
-    chest.tools.push_back(
-        Tool("Universal", 3)
-    );
+    chest.tools.push_back(Tool("Universal", 3));
+    chest.tools.push_back(Tool("Forge Hammer", 1));
+    chest.addIngredient(Ingredient("Iron Ore", 5, "pcs"));
+    chest.addIngredient(Ingredient("Steel Fragment", 5, "pcs"));
+    chest.items.push_back(Item("Tool Ascension"));
 
-    chest.tools.push_back(
-        Tool("Forge Hammer", 1)
-    );
-
-    chest.addIngredient(
-        Ingredient("Iron Ore", 5, "pcs")
-    );
-
-    chest.addIngredient(
-        Ingredient("Steel Fragment", 5, "pcs")
-    );
-
-    chest.items.push_back(
-        Item("Tool Ascension")
-    );
-
-    ToolUpgrade::upgradeTool(
-        chest,
-        "Forge Hammer"
-    );
+    ToolUpgrade::upgradeTool(chest,"Forge Hammer");
 
     CHECK(chest.tools[1].tier == 2);
 }

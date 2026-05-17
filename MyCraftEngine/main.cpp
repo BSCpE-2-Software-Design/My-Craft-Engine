@@ -10,72 +10,41 @@
 #include "Data.h"
 
 int getIntInput() {
-
     int x;
-
     while (true) {
-
         std::cin >> x;
-
         if (!std::cin.fail()) {
-
             return x;
         }
-
         std::cout << "Invalid input. Numbers only.\n";
-
         std::cin.clear();
-
-        std::cin.ignore(
-            std::numeric_limits<std::streamsize>::max(),
-            '\n'
-        );
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
 
         std::cout << "Try again: ";
     }
 }
 
 double getDoubleInput() {
-
     double x;
-
     while (true) {
-
         std::cin >> x;
-
         if (!std::cin.fail()) {
-
             return x;
         }
-
         std::cout << "Invalid number.\n";
-
         std::cin.clear();
-
-        std::cin.ignore(
-            std::numeric_limits<std::streamsize>::max(),
-            '\n'
-        );
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
 
         std::cout << "Try again: ";
     }
 }
-
-
 void showItems(std::vector<Recipe>& list) {
-
     for (int i = 0; i < list.size(); i++) {
-
-        std::cout << "[" << i + 1 << "] "
-            << list[i].itemName
-            << "\n";
+        std::cout << "[" << i + 1 << "] " << list[i].itemName << "\n";
     }
 }
-
-
 void showRecipeRequirements(Chest& chest, Recipe& r) {
-
-    std::cout << "\n=================================\n";
+    std::cout << "=================================" << '\n';
     std::cout << "ITEM: " << r.itemName << "\n";
     int requiredToolTier = 1;
     if (r.tier == 2) requiredToolTier = 2;
@@ -83,25 +52,19 @@ void showRecipeRequirements(Chest& chest, Recipe& r) {
 
     std::cout << "REQUIRED TOOL: " << r.station << " (Tier " << requiredToolTier << ")\n";
     std::cout << "RECIPE TIER: " << r.tier << "\n";
-    std::cout << "=================================\n";
+    std::cout << "=================================" << '\n';
 
     bool canCraft = true;
-
     for (auto& ing : r.ingredients) {
-
         bool found = false;
-
-        // check raw ingredients first
         for (auto& playerIng : chest.ingredients) {
             if (playerIng.name == ing.name &&
                 playerIng.quantity >= ing.quantity) {
-
                 found = true;
                 break;
             }
         }
 
-        // if not found in raw ingredients, check crafted items inventory
         if (!found) {
             int count = 0;
             for (auto& it : chest.items) {
@@ -111,44 +74,35 @@ void showRecipeRequirements(Chest& chest, Recipe& r) {
         }
 
         if (found) {
-
             std::cout << "[OK] ";
         }
         else {
-
             std::cout << "[MISSING] ";
             canCraft = false;
         }
-
-        std::cout << ing.name
-            << " x"
-            << ing.quantity
-            << "\n";
+        std::cout << ing.name << " x" << ing.quantity << "\n";
     }
 
-    std::cout << "=================================\n";
+    std::cout << "=================================" << '\n';
 
-    // check required tool tier availability
     if (!chest.hasTool(r.station, requiredToolTier)) {
         std::cout << "[MISSING TOOL] " << r.station << " (need Tier " << requiredToolTier << ")\n";
         canCraft = false;
     }
 
     if (!canCraft) {
-
-        std::cout << "You do not have enough materials or the required tool.\n";
+        std::cout << "You do not have enough materials or the required tool." << '\n';
         return;
     }
 
     int opt;
 
-    std::cout << "\n[1] Craft\n";
-    std::cout << "[2] Back\n";
+    std::cout << "[1] Craft" << '\n';
+    std::cout << "[2] Back" << '\n';
     std::cout << "Choice: ";
     opt = getIntInput();
 
     if (opt == 1) {
-
         CraftEngine::craft(chest, r);
     }
 }
@@ -411,21 +365,19 @@ int main() {
                         continue;
                     }
 
-                    // show numbered list so user can pick by index
                     for (int i = 0; i < (int)chest.tools.size(); ++i) {
                         std::cout << "[" << i + 1 << "] " << chest.tools[i].name << " Tier " << chest.tools[i].tier << '\n';
                     }
 
                     std::cout << "[5] Back" << '\n';
 
-                    // clear leftover input up to newline
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
                     std::cout << "Enter tool number to upgrade: " << '\n';
                     int pick = getIntInput();
 
                     if (pick == 5) {
-                        continue; // user chose back
+                        continue;
                     }
 
                     if (pick < 1 || pick > (int)chest.tools.size()) {
@@ -435,7 +387,6 @@ int main() {
 
                     std::string name = chest.tools[pick - 1].name;
 
-                    // show requirements and ask for confirmation
                     ToolUpgrade::showRequirements(chest, name);
                     std::cout << "\n[1] Confirm upgrade\n[2] Back\nChoice: ";
                     int confirm = getIntInput();

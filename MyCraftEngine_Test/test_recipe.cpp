@@ -28,12 +28,7 @@ TEST_CASE("Recipe stores ingredient data correctly") {
         Ingredient("Crystal Shard", 1, "pcs")
     };
 
-    Recipe recipe(
-        "Magic Wand",
-        ingredients,
-        "Mystical Arcane Table",
-        2
-    );
+    Recipe recipe("Magic Wand",ingredients,"Mystical Arcane Table",2);
 
     CHECK(recipe.ingredients[0].name == "Magic Dust");
     CHECK(recipe.ingredients[0].quantity == 3);
@@ -44,26 +39,20 @@ TEST_CASE("Recipe stores ingredient data correctly") {
 
 TEST_CASE("Recipe supports tier 3 recipes") {
 
-    Recipe recipe(
-        "Blade of Despair",
+    Recipe recipe("Blade of Despair",
         {
             Ingredient("Legion Sword", 2, "pcs")
         },
-        "Forge Hammer",
-        3
-    );
+        "Forge Hammer",3);
 
     CHECK(recipe.tier == 3);
 }
 
 TEST_CASE("Recipe supports empty ingredients") {
 
-    Recipe recipe(
-        "Empty Recipe",
+    Recipe recipe("Empty Recipe",
         {},
-        "Forge Hammer",
-        1
-    );
+        "Forge Hammer",1);
 
     CHECK(recipe.ingredients.empty());
 }

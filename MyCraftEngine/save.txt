@@ -1,9 +1,9 @@
 I
 Iron Ore
-9986
+9984
 I
 Wood
-10004
+10003
 I
 Steel Fragment
 9996
@@ -18,10 +18,10 @@ Cloth
 9999
 I
 Mana Crystal
-9999
+9997
 I
 Crystal Shard
-9999
+9998
 I
 Beast Fang
 9999
@@ -47,3 +47,7 @@ IT
 Blade of Despair
 IT
 Regular Spear
+IT
+Dagger
+IT
+Magic Necklace
