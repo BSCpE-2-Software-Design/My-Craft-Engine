@@ -115,6 +115,9 @@ int main() {
 
     if (!chest.hasTool("Universal")) {
         chest.tools.push_back(Tool("Universal", 1));
+        chest.tools.push_back(Tool("Mystical Arcane Table", 1));
+        chest.tools.push_back(Tool("Guardian Sigil", 1));
+        chest.tools.push_back(Tool("Universal", 1));
 
     }
 

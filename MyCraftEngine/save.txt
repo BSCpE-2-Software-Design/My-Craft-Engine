@@ -1,39 +1,6 @@
-I
-Iron Ore
-9984
-I
-Wood
-10003
-I
-Steel Fragment
-9996
-I
-Magic Dust
-1007
-I
-Leather
-9999
-I
-Cloth
-9999
-I
-Mana Crystal
-9997
-I
-Crystal Shard
-9998
-I
-Beast Fang
-9999
-I
-Energy Core
-9999
-I
-Dark Essence
-999
 T
-Forge Hammer
-3
+Universal
+1
 T
 Mystical Arcane Table
 1
@@ -43,11 +10,3 @@ Guardian Sigil
 T
 Universal
 1
-IT
-Blade of Despair
-IT
-Regular Spear
-IT
-Dagger
-IT
-Magic Necklace
